@@ -39,3 +39,4 @@ function jewelsAndStones(jewels, stones) {
 
 console.log(jewelsAndStones("aA", "aAAbbbb"));
 console.log(jewelsAndStones("z", "ZZ"));
+console.log(jewelsAndStones('sdF', 'sdfSDFsdf'));

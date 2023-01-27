@@ -19,6 +19,8 @@ class Stack {
 
 }
 
+module.exports = { Stack };
+
 const stack = new Stack();
 stack.push('fox');
 stack.push('goose');
