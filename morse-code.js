@@ -55,7 +55,7 @@
 // - "gig" -> `--...--.`
 // - "msg" -> `--...--.`
 
-// There are 2 different transformations: 
+// There are 2 different transformations:
 // 1. `--...-.`
 // 1. `--...--.`
 
@@ -99,4 +99,34 @@ const codes = [
 ];
 
 function uniqueWords(words) {
+  const morseCodeWords = words.map(wordToMorse);
+  console.log('morseCodeWords', morseCodeWords);
+  console.log('uniqueMorseWords', uniqueMorseWords);
+  return uniqueMorseWords(morseCodeWords);
 }
+
+
+function wordToMorse(word) {
+  const chars = word.split('');
+  const newMorse = chars.map(charToMorse);
+  console.log('chars', chars);
+  console.log('newMorse', newMorse);
+  return newMorse.join('');
+}
+
+function charToMorse(char) {
+  const charCode = char.charCodeAt(0);
+  const index = charCode - 97;
+  console.log('charCode', charCode);
+  console.log('index', index);
+  return codes[index];
+}
+
+function uniqueMorseWords(morseCodeWords) {
+  const uniqueWords = new Set(morseCodeWords);
+  console.log('uniqueWords', uniqueWords);
+  console.log('uniqueWords.size', uniqueWords.size);
+  return uniqueWords.size;
+}
+
+console.log(uniqueWords(['gin', 'zen', 'gig', 'msg']));
